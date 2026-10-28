@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entle Myezo | Software Developer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Georgia&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Entle Myezo | Aspiring Software Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #FFF7FA;
-            --text-color: #4A3B42;
-            --accent-pink: #D65F8D;
-            --soft-pink: #F4A7C5;
+            --bg-color: #FAFAFA;
+            --text-color: #333333;
+            --accent-plum: #8C3A5C; /* A mature, elegant deep pink */
+            --soft-rose: #F7E6EB;
             --card-bg: #FFFFFF;
         }
 
@@ -20,102 +20,123 @@
             font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
+        /* The elegant header gradient */
         header {
             text-align: center;
-            padding: 80px 20px;
-            background: linear-gradient(135deg, #FFF7FA 0%, #FFE4EE 100%);
-            border-bottom: 2px solid var(--soft-pink);
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #FFE4EC 0%, #FFF7FA 50%, #F4F0EC 100%);
+            border-bottom: 1px solid #EAD5DE;
         }
 
         h1 {
-            font-family: 'Georgia', serif;
-            font-size: 3rem;
-            color: var(--accent-pink);
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--accent-plum);
             margin-bottom: 10px;
+            font-weight: 600;
         }
 
         h2 {
-            font-weight: 300;
-            font-size: 1.2rem;
-            letter-spacing: 2px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            font-size: 1.1rem;
+            letter-spacing: 3px;
             text-transform: uppercase;
+            color: #6B4C5A;
         }
 
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 50px 20px;
         }
 
         .section-title {
-            font-family: 'Georgia', serif;
-            color: var(--accent-pink);
-            font-size: 2rem;
-            border-bottom: 2px dashed var(--soft-pink);
+            font-family: 'Playfair Display', serif;
+            color: var(--accent-plum);
+            font-size: 2.2rem;
+            border-bottom: 1px solid #EAD5DE;
             padding-bottom: 10px;
             margin-bottom: 30px;
         }
 
         .project-card {
             background-color: var(--card-bg);
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 15px rgba(214, 95, 141, 0.1);
-            border-left: 5px solid var(--accent-pink);
-            transition: transform 0.3s ease;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+            border-left: 4px solid var(--accent-plum);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(140, 58, 92, 0.1);
         }
 
         .project-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
             margin-top: 0;
-            color: var(--accent-pink);
+            color: var(--accent-plum);
         }
 
         .tech-stack {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
             color: #888;
             margin-bottom: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .links a {
             display: inline-block;
             margin-right: 15px;
+            margin-top: 10px;
             text-decoration: none;
-            color: var(--accent-pink);
+            color: var(--accent-plum);
             font-weight: 600;
-            border: 1px solid var(--accent-pink);
-            padding: 5px 15px;
-            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid var(--accent-plum);
+            padding: 6px 18px;
+            border-radius: 30px;
             transition: all 0.3s ease;
         }
 
         .links a:hover {
-            background-color: var(--accent-pink);
+            background-color: var(--accent-plum);
             color: white;
         }
 
         footer {
             text-align: center;
-            padding: 40px 20px;
-            color: var(--accent-pink);
-            font-family: 'Georgia', serif;
+            padding: 50px 20px;
+            color: #888;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            border-top: 1px solid #EAD5DE;
+            background-color: #FFF;
+        }
+        
+        footer a {
+            color: var(--accent-plum);
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 10px;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Entle Myezo 🎀</h1>
-        <h2>Software Developer in Progress</h2>
-        <p><i>Building ideas into code · Learning every day · Growing through projects</i></p>
+        <h1>Entle Myezo</h1>
+        <h2>Aspiring Software Developer</h2>
+        <p style="font-style: italic; color: #7A5C6A;">Building ideas into code · Learning every day · Growing through projects</p>
     </header>
 
     <div class="container">
@@ -163,16 +184,23 @@
             </div>
         </div>
         
-        
+        <div class="project-card">
+            <h3>Agile Portfolio</h3>
+            <div class="tech-stack">HTML · CSS · GitHub Pages</div>
+            <p>A project portfolio documenting my work, progress, reflections, and learning throughout my academic journey.</p>
+            <div class="links">
+                <a href="https://entle-myezo.github.io/PRP370-PORTFOLIO/" target="_blank">Live Portfolio</a>
+            </div>
+        </div>
 
-
+    </div>
 
     <footer>
         <p>Made with love, a little blush pink, and lots of ambition. 🎀</p>
         <p>
-            <a href="https://github.com/entle-myezo" style="color:var(--accent-pink);">GitHub</a> | 
-            <a href="https://www.linkedin.com/in/entle-kallyann-myezo-94812638b" style="color:var(--accent-pink);">LinkedIn</a> | 
-            <a href="mailto:230076238@mycput.ac.za" style="color:var(--accent-pink);">Email</a>
+            <a href="https://github.com/entle-myezo">GitHub</a> | 
+            <a href="https://www.linkedin.com/in/entle-kallyann-myezo-94812638b">LinkedIn</a> | 
+            <a href="mailto:230076238@mycput.ac.za">Email</a>
         </p>
     </footer>
 
