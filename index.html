@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entle Myezo | Software Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Georgia&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #FFF7FA;
+            --text-color: #4A3B42;
+            --accent-pink: #D65F8D;
+            --soft-pink: #F4A7C5;
+            --card-bg: #FFFFFF;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #FFF7FA 0%, #FFE4EE 100%);
+            border-bottom: 2px solid var(--soft-pink);
+        }
+
+        h1 {
+            font-family: 'Georgia', serif;
+            font-size: 3rem;
+            color: var(--accent-pink);
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-weight: 300;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            font-family: 'Georgia', serif;
+            color: var(--accent-pink);
+            font-size: 2rem;
+            border-bottom: 2px dashed var(--soft-pink);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(214, 95, 141, 0.1);
+            border-left: 5px solid var(--accent-pink);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            margin-top: 0;
+            color: var(--accent-pink);
+        }
+
+        .tech-stack {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        .links a {
+            display: inline-block;
+            margin-right: 15px;
+            text-decoration: none;
+            color: var(--accent-pink);
+            font-weight: 600;
+            border: 1px solid var(--accent-pink);
+            padding: 5px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .links a:hover {
+            background-color: var(--accent-pink);
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--accent-pink);
+            font-family: 'Georgia', serif;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Entle Myezo 🎀</h1>
+        <h2>Software Developer in Progress</h2>
+        <p><i>Building ideas into code · Learning every day · Growing through projects</i></p>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <p>Hey there! I'm a final-year Information Technology student at CPUT, passionate about software development, problem-solving, and creating useful digital experiences. I love turning what I learn into real-world solutions and growing into a confident developer.</p>
+
+        <h2 class="section-title">My Projects</h2>
+
+        <div class="project-card">
+            <h3>Clever AI Buddy</h3>
+            <div class="tech-stack">React · JavaScript · CSS</div>
+            <p>A web-based AI assistant designed to help users with email drafting, meeting summaries, task planning, and research.</p>
+            <div class="links">
+                <a href="https://github.com/entle-myezo/AI-Productivity-Assistant-App" target="_blank">View Code</a>
+                <a href="https://clever-ai-buddy-93.lovable.app" target="_blank">Live App</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>Tact Connect Portal</h3>
+            <div class="tech-stack">React · TypeScript · Supabase</div>
+            <p>A custom web portal built for my church to manage and display their calendar. Created as a passion project to practice integrating real-world data into a modern web application.</p>
+            <div class="links">
+                <a href="https://github.com/entle-myezo/tact-connect-portal" target="_blank">View Code</a>
+                <a href="https://the-tact-connect-portal.vercel.app" target="_blank">Live App</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>Washtrack App</h3>
+            <div class="tech-stack">JavaScript · HTML · CSS</div>
+            <p>A collaborative group project focused on building a web-based application to track and manage car wash services efficiently.</p>
+            <div class="links">
+                <a href="https://github.com/entle-myezo/Washtrack-App-Assignment" target="_blank">View Code</a>
+                <a href="https://washtrack-app-assignment.vercel.app" target="_blank">Live App</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>CPUT Item Finder</h3>
+            <div class="tech-stack">Java</div>
+            <p>A collaborative group project developed to help students and staff track lost and found items on campus. Focused on backend logic and database integration.</p>
+            <div class="links">
+                <a href="https://github.com/entle-myezo/PRT2026-Lost_And_Found" target="_blank">View Code</a>
+            </div>
+        </div>
+        
+        
+
+
+
+    <footer>
+        <p>Made with love, a little blush pink, and lots of ambition. 🎀</p>
+        <p>
+            <a href="https://github.com/entle-myezo" style="color:var(--accent-pink);">GitHub</a> | 
+            <a href="https://www.linkedin.com/in/entle-kallyann-myezo-94812638b" style="color:var(--accent-pink);">LinkedIn</a> | 
+            <a href="mailto:230076238@mycput.ac.za" style="color:var(--accent-pink);">Email</a>
+        </p>
+    </footer>
+
+</body>
+</html>
