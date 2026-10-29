@@ -7,254 +7,330 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #FAFAFA;
-            --text-color: #333333;
-            --accent-plum: #8C3A5C; 
-            --soft-pink: #FFE4EC;
-            --card-bg: #FFFFFF;
+            --bg-dark: #120D10; /* Very dark plum/black */
+            --accent-pink: #D65F8D; /* Bright vibrant pink */
+            --soft-pink: #F4A7C5;
+            --text-light: #EAEAEA;
+            --text-muted: #A89BA1;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(214, 95, 141, 0.2);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background-color: var(--bg-dark);
+            color: var(--text-light);
             font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
             line-height: 1.7;
             overflow-x: hidden;
         }
 
         /* --- ANIMATIONS --- */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(20px); }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* 🎀 THE NEW DARK CODING HEADER 🎀 */
-        header {
-            text-align: center;
-            padding: 70px 20px;
-            /* Dark gradient with a subtle coding grid pattern */
-            background-color: #1A1115;
-            background-image: 
-                linear-gradient(rgba(26, 17, 21, 0.9), rgba(26, 17, 21, 0.9)),
-                url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2000&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            border-bottom: 3px solid var(--accent-plum);
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px var(--accent-pink); }
+            50% { box-shadow: 0 0 20px var(--accent-pink); }
+            100% { box-shadow: 0 0 5px var(--accent-pink); }
         }
 
-        .profile-container {
+        /* --- HERO SECTION --- */
+        .hero {
+            min-height: 100vh;
             display: flex;
-            justify-content: center;
-            margin-bottom: 25px;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .profile-pic {
-            width: 200px;
-            height: 200px;
-            background-image: url('https://raw.githubusercontent.com/entle-myezo/portfolio/refs/heads/main/veryprofessional.jpeg');
-            background-size: 140%;
-            background-position: center 20%; 
-            background-repeat: no-repeat;
-            border-radius: 50%;
-            border: 4px solid var(--soft-pink); /* Pink border to match the text */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Darker shadow for the dark bg */
-            transition: background-size 0.5s ease;
-        }
-
-        .profile-pic:hover {
-            background-size: 150%; 
-        }
-
-        /* Changed text colors to soft pink/white so they show up on the dark background */
-        header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.2rem;
-            color: var(--soft-pink);
-            margin: 10px 0;
-            font-weight: 600;
-        }
-
-        header h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 400;
-            font-size: 1rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #D8B4C4;
-        }
-
-        header p {
-            color: #BBA3AF;
-            font-style: italic;
-        }
-
-        .container {
-            max-width: 800px; 
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 50px 20px;
+            padding: 0 40px;
+            gap: 50px;
+        }
+
+        .hero-content {
+            flex: 1;
+            animation: slideUp 1s ease-out forwards;
+        }
+
+        .hero-content h3 {
+            color: var(--soft-pink);
+            font-size: 1.2rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            color: #FFFFFF;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-pink);
+            color: white;
+            border: 2px solid var(--accent-pink);
+            animation: glow 3s infinite;
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--accent-pink);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-light);
+            border: 1px solid var(--text-muted);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-pink);
+            color: var(--accent-pink);
+        }
+
+        .hero-image-container {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            animation: slideUp 1.2s ease-out forwards;
+        }
+
+        .hero-image {
+            width: 400px;
+            height: 500px;
+            background-image: url('https://raw.githubusercontent.com/entle-myezo/portfolio/refs/heads/main/veryprofessional.jpeg');
+            background-size: cover;
+            background-position: center 20%;
+            border-radius: 200px 200px 20px 20px; /* Gives it that cool arched shape */
+            border: 2px solid var(--accent-pink);
+            box-shadow: 0 20px 50px rgba(214, 95, 141, 0.2);
+        }
+
+        /* --- PROJECTS SECTION --- */
+        .projects-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 100px 40px;
         }
 
         .section-title {
             font-family: 'Playfair Display', serif;
-            color: var(--accent-plum);
-            font-size: 2rem;
-            border-bottom: 1px solid #EAD5DE;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
+            font-size: 3rem;
+            color: #FFFFFF;
+            margin-bottom: 50px;
+            text-align: center;
         }
 
+        .section-title span {
+            color: var(--accent-pink);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* Glassmorphism cards */
         .project-card {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 25px 30px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-            border-left: 4px solid var(--accent-plum);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            animation: fadeUp 0.6s ease-out forwards;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(140, 58, 92, 0.1);
+            transform: translateY(-10px);
+            border-color: var(--accent-pink);
+            box-shadow: 0 10px 30px rgba(214, 95, 141, 0.1);
         }
 
         .project-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            margin-top: 0;
-            margin-bottom: 5px;
-            color: var(--accent-plum);
+            font-size: 1.5rem;
+            color: #FFFFFF;
+            margin-bottom: 10px;
         }
 
         .tech-stack {
             font-size: 0.8rem;
+            color: var(--soft-pink);
             font-weight: 600;
-            color: #888;
-            margin-bottom: 15px;
             letter-spacing: 1px;
+            margin-bottom: 15px;
             text-transform: uppercase;
         }
 
         .project-card p {
             font-size: 0.95rem;
-            color: #555;
-            margin-bottom: 15px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .links {
+            display: flex;
+            gap: 10px;
         }
 
         .links a {
-            display: inline-block;
-            margin-right: 12px;
             text-decoration: none;
-            color: var(--accent-plum);
-            font-weight: 600;
+            color: var(--accent-pink);
             font-size: 0.85rem;
-            border: 1px solid var(--accent-plum);
+            font-weight: 600;
+            border: 1px solid var(--accent-pink);
             padding: 5px 15px;
-            border-radius: 25px;
+            border-radius: 20px;
             transition: all 0.3s ease;
         }
 
         .links a:hover {
-            background-color: var(--accent-plum);
+            background-color: var(--accent-pink);
             color: white;
         }
 
+        /* --- FOOTER --- */
         footer {
             text-align: center;
             padding: 40px 20px;
-            color: #888;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            border-top: 1px solid #EAD5DE;
-            background-color: #FFF;
+            border-top: 1px solid #2A1F24;
+            color: var(--text-muted);
         }
-        
+
         footer a {
-            color: var(--accent-plum);
+            color: var(--accent-pink);
             text-decoration: none;
-            font-weight: 600;
             margin: 0 10px;
+        }
+
+        /* --- MOBILE RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 100px;
+                gap: 30px;
+            }
+            .hero-content h1 { font-size: 3.5rem; }
+            .hero-content p { margin: 0 auto 30px auto; }
+            .hero-buttons { justify-content: center; }
+            .hero-image-container { justify-content: center; }
+            .hero-image { width: 300px; height: 400px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="profile-container">
-            <div class="profile-pic"></div>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h3>Hi, I'm</h3>
+            <h1>Entle Myezo</h1>
+            <p>Aspiring Software Developer</p>
+            <p>I build elegant, user-focused digital experiences. Currently a final-year IT student at CPUT, turning ideas into real-world code.</p>
+            
+            <div class="hero-buttons">
+                <a href="mailto:230076238@mycput.ac.za" class="btn btn-primary">Hire Me</a>
+                <a href="#projects" class="btn btn-secondary">View Projects</a>
+            </div>
         </div>
+
+        <div class="hero-image-container">
+            <div class="hero-image"></div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="projects-section">
+        <h2 class="section-title">My <span>Projects</span></h2>
         
-        <h1>Entle Myezo</h1>
-        <h2>Aspiring Software Developer</h2>
-        <p>Building ideas into code · Learning every day · Growing through projects</p>
-    </header>
-
-    <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <p>Hey there! I'm a final-year Information Technology student at CPUT, passionate about software development, problem-solving, and creating useful digital experiences. I love turning what I learn into real-world solutions and growing into a confident developer.</p>
-
-        <h2 class="section-title">My Projects</h2>
-
-        <!-- Project 1 -->
-        <div class="project-card">
-            <h3>Clever AI Buddy</h3>
-            <div class="tech-stack">React · JavaScript · CSS</div>
-            <p>A web-based AI assistant designed to help users with email drafting, meeting summaries, task planning, and research.</p>
-            <div class="links">
-                <a href="https://github.com/entle-myezo/AI-Productivity-Assistant-App" target="_blank">View Code</a>
-                <a href="https://clever-ai-buddy-93.lovable.app" target="_blank">Live App</a>
+        <div class="project-grid">
+            
+            <!-- Project 1 -->
+            <div class="project-card">
+                <h3>Clever AI Buddy</h3>
+                <div class="tech-stack">React · JavaScript · CSS</div>
+                <p>A web-based AI assistant designed to help users with email drafting, meeting summaries, task planning, and research.</p>
+                <div class="links">
+                    <a href="https://github.com/entle-myezo/AI-Productivity-Assistant-App" target="_blank">Code</a>
+                    <a href="https://clever-ai-buddy-93.lovable.app" target="_blank">Live App</a>
+                </div>
             </div>
-        </div>
 
-        <!-- Project 2 -->
-        <div class="project-card">
-            <h3>Tact Connect Portal</h3>
-            <div class="tech-stack">React · TypeScript · Supabase</div>
-            <p>A custom web portal built for my church to manage and display their calendar. Created as a passion project to practice integrating real-world data into a modern web application.</p>
-            <div class="links">
-                <a href="https://github.com/entle-myezo/tact-connect-portal" target="_blank">View Code</a>
-                <a href="https://the-tact-connect-portal.vercel.app" target="_blank">Live App</a>
+            <!-- Project 2 -->
+            <div class="project-card">
+                <h3>Tact Connect Portal</h3>
+                <div class="tech-stack">React · TypeScript · Supabase</div>
+                <p>A custom web portal built for my church to manage and display their calendar. Created as a passion project to practice real-world data integration.</p>
+                <div class="links">
+                    <a href="https://github.com/entle-myezo/tact-connect-portal" target="_blank">Code</a>
+                    <a href="https://the-tact-connect-portal.vercel.app" target="_blank">Live App</a>
+                </div>
             </div>
-        </div>
 
-        <!-- Project 3 -->
-        <div class="project-card">
-            <h3>Washtrack App</h3>
-            <div class="tech-stack">JavaScript · HTML · CSS</div>
-            <p>A collaborative group project focused on building a web-based application to track and manage car wash services efficiently.</p>
-            <div class="links">
-                <a href="https://github.com/entle-myezo/Washtrack-App-Assignment" target="_blank">View Code</a>
-                <a href="https://washtrack-app-assignment.vercel.app" target="_blank">Live App</a>
+            <!-- Project 3 -->
+            <div class="project-card">
+                <h3>Washtrack App</h3>
+                <div class="tech-stack">JavaScript · HTML · CSS</div>
+                <p>A collaborative group project focused on building a web-based application to track and manage car wash services efficiently.</p>
+                <div class="links">
+                    <a href="https://github.com/entle-myezo/Washtrack-App-Assignment" target="_blank">Code</a>
+                    <a href="https://washtrack-app-assignment.vercel.app" target="_blank">Live App</a>
+                </div>
             </div>
-        </div>
 
-        <!-- Project 4 -->
-        <div class="project-card">
-            <h3>CPUT Item Finder</h3>
-            <div class="tech-stack">Java</div>
-            <p>A collaborative group project developed to help students and staff track lost and found items on campus. Focused on backend logic and database integration.</p>
-            <div class="links">
-                <a href="https://github.com/entle-myezo/PRT2026-Lost_And_Found" target="_blank">View Code</a>
+            <!-- Project 4 -->
+            <div class="project-card">
+                <h3>CPUT Item Finder</h3>
+                <div class="tech-stack">Java</div>
+                <p>A collaborative group project developed to help students and staff track lost and found items on campus. Focused on backend logic.</p>
+                <div class="links">
+                    <a href="https://github.com/entle-myezo/PRT2026-Lost_And_Found" target="_blank">Code</a>
+                </div>
             </div>
+
         </div>
-        
+    </section>
 
-
-    </div>
-
+    <!-- FOOTER -->
     <footer>
-        <p>Made with love, a little blush pink, and lots of ambition. 🎀</p>
-        <p>
+        <p>Let's connect! 🎀</p>
+        <p style="margin-top: 10px;">
             <a href="https://github.com/entle-myezo">GitHub</a> | 
             <a href="https://www.linkedin.com/in/entle-kallyann-myezo-94812638b">LinkedIn</a> | 
             <a href="mailto:230076238@mycput.ac.za">Email</a>
